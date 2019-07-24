@@ -1,9 +1,9 @@
 class Node {
-  constructor(data) {(
+  constructor(data) {
         this.data = data,
         this.next = null,
         this.previous = null
-        )}
+        }
 }
 
 class LinkedList {
@@ -12,13 +12,14 @@ class LinkedList {
     this.tail = null;
   }
 
-    setNewHead = data => {
+    setFirst = data => {
         var newHead = new Node(data);
         if(this.head) {
             newHead.next = this.head;
             this.head.previous = newHead;
         }
         this.head = newHead;
+        this.tail = head.next? this.tail : this.head;
     };
 
     addItem = (data, index = null) => {
@@ -87,7 +88,6 @@ class LinkedList {
     deleteByIndex = index => {
         let toDelete = this.searchItem(index);
         this.deleteItem(toDelete.data);
-        console.log(myList);
     };
     
 };

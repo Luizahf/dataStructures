@@ -26,7 +26,7 @@ namespace LinkedList
             }
         }
 
-        public void SetNewHead(TNode data)
+        public void SetFirst(TNode data)
         {
             if (Head == null)
             {
@@ -118,19 +118,19 @@ namespace LinkedList
             }
         }
 
-        public void SearchItem(int index)
+        public TNode SearchByIndex(int index)
         {
             Node<TNode> Current = Head;
             int count = 0;
             if (index == 0)
             {
-                Console.WriteLine(Current.Data);
+                return Current.Data;
             }
             while (Current != null)
             {
                 if (count == index)
                 {
-                    Console.WriteLine(Current.Data);
+                    return Current.Data;
                 }
 
                 Current = Current.Right;
