@@ -10,8 +10,8 @@ namespace Queue1
     {
         public class MyQueue<TNode>
         {
-            private Node<TNode> Head;
-            private Node<TNode> Tail;
+            private Node<TNode> Front;
+            private Node<TNode> Back;
 
             private class Node<TNode>
             {
@@ -29,40 +29,40 @@ namespace Queue1
                 }
             }
 
-            public void Push(TNode data)
+            public void Enqueue(TNode data)
             {
                 Node<TNode> NewItem = new Node<TNode>(data);
 
-                if (Tail != null)
+                if (Back != null)
                 {
-                    Tail.next = NewItem;
+                    Back.next = NewItem;
                 }
                 Tail = NewItem;
-                if (Head == null)
+                if (Front == null)
                 {
-                    Head = NewItem;
+                    Front = NewItem;
                 }
             }
 
-           
-            public void Pop(TNode data)
+
+            public void Dequeue(TNode data)
             {
-                Head = Head.Next;
-                if (Head == null)
+                Front = Front.Next;
+                if (Front == null)
                 {
-                    Tail==null;
+                    Back == null;
                 }
-                
+
             }
 
             public Boolean IsEmpty()
             {
-                return Head == null;
+                return Front == null;
             }
 
-            public TNode Peek()
+            public TNode getFront()
             {
-                return Head.Data;
+                return Front.Data;
             }
         }
     }
