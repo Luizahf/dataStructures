@@ -4,6 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Algorythim analisys of Queues and it's basic operations
+ * Goal: Improve knowledge about queue data structures and improve practice
+ * 
+ * Queue implementation through Nodes
+ */
+
 namespace Queue1
 {
     class Queue
@@ -13,6 +20,7 @@ namespace Queue1
             private Node<TNode> Front;
             private Node<TNode> Back;
 
+            // Creates a Node with the data informed and sets the Next attr
             private class Node<TNode>
             {
                 public TNode Data;
@@ -29,6 +37,7 @@ namespace Queue1
                 }
             }
 
+            // Adds/Stores data as a Node in the back of the Queue
             public void Enqueue(TNode data)
             {
                 Node<TNode> NewItem = new Node<TNode>(data);
@@ -44,8 +53,8 @@ namespace Queue1
                 }
             }
 
-
-            public void Dequeue(TNode data)
+            // Removes the first data Node of the Queue
+            public void Dequeue()
             {
                 Front = Front.Next;
                 if (Front == null)
@@ -55,11 +64,13 @@ namespace Queue1
 
             }
 
+            // Checks if the Queue is empty
             public Boolean IsEmpty()
             {
                 return Front == null;
             }
 
+            // Shows the element that's in the front of the Queue
             public TNode getFront()
             {
                 return Front.Data;
