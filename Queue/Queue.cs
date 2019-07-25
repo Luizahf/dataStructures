@@ -44,7 +44,7 @@ namespace Queue1
 
                 if (Back != null)
                 {
-                    Back.next = NewItem;
+                    Back.Next = NewItem;
                 }
                 Tail = NewItem;
                 if (Front == null)

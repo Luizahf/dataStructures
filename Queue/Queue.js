@@ -21,7 +21,7 @@ class Queue {
 
   // Adds/Stores data as a Node in the back of the Queue
   enqueue = data => {
-    newNode = new Node(data);
+    var newNode = new Node(data);
     if (this.back) {
       this.back.next = newNode;
       this.back = newNode;
