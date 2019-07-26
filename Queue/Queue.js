@@ -51,7 +51,10 @@ class Queue {
    */
   dequeue = () => {
     if (this.front) {
-      this.front = front.next;
+      this.front = this.front.next;
+    }
+    if(this.front == null) {
+      this.back = null; 
     }
   };
 
