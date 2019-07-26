@@ -15,12 +15,22 @@ namespace Stack
 {
     class Stack
     {
+        /// <summary>
+        /// Class <c>MyStack</c> sets the Stack data structure
+        /// <summary>
+        /// <param name="Top">
+        /// Last element added to the Stack
+        /// </param>
         public class MyStack<TNode>
         {
-            // Sets the Stack attr top
             private Node<TNode> Top;
 
-            // Creates a Node with the data and sets "next" attr
+            /// <summary>
+            /// Class <c>Node</c> Creates a Node with the data
+            /// </summary>
+            /// <param name="Next"> 
+            /// Link to the next Node
+            /// </param>
             private class Node<TNode>
             {
                 public TNode Data;
@@ -37,7 +47,12 @@ namespace Stack
                 }
             }
 
-            // Creates a new Node with the given data and pushes it on top of the stack
+            /// <summary>
+            /// Method <c>Push</c> Creates a new Node with the given data and pushes it on top of the stack
+            /// </summary>
+            /// <param name="data">
+            /// Informed data that will be added to the Stack
+            /// </param>
             public void Push(TNode data)
             {
                 Node<TNode> NewItem = new Node<TNode>(data);
@@ -45,17 +60,31 @@ namespace Stack
                 Top = NewItem;
             }
 
-            // Removes the top Node of the Stack
+            /// <summary>
+            /// Method <c>Pop</c> Removes the top Node of the Stack
+            /// </summary>
             public void Pop()
             {
                 Top = Top.Next;
             }
-            // Returns the top Node
+
+            /// <summary>
+            /// Method <c>Peek</c> Shows the element that's on top of the Stack
+            /// </summary>
+            /// <returns> 
+            /// <c>Top</c>: The top element of the stack
+            /// </returns>
             public TNode Peek()
             {
                 return Top.Data;
             }
-            // Checks if the Stack is empty
+
+            /// <summary>
+            /// Method <c>IsEmpty</c> Checks if the Stack is empty
+            /// </summary>
+            /// <returns> 
+            /// Boolean value triggered when the Stack is null 
+            /// </returns>
             public Boolean IsEmpty()
             {
                 return Top == null;
